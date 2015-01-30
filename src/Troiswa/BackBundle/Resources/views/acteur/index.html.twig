@@ -1,0 +1,51 @@
+{% extends "TroiswaBackBundle::layout.html.twig" %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Tous les acteurs:
+            </h1>
+        </div>
+    </div>
+
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <td>id</td>
+                <td>nom</td>
+                <td>prenom</td>
+                <td>biographie</td>
+                <td>sexe</td>
+                <td>date de naissance</td>
+                <td>image</td>
+                <td>editer</td>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for acteur in allActeurs %}
+            <tr>
+                <td>{{ acteur.id }}</td>
+                <td><a href="{{ path("troiswa_back_one_acteur", {'id' : acteur.id} ) }}">{{ acteur.prenom }}</a></td>
+                <td>{{ acteur.nom }}</td>
+                <td>{{ acteur.biographie }}</td>
+                <td>{% if acteur.sexe == 0 %}Homme{% else %}Femme{% endif %}</td>
+                <td>{{ acteur.dateDeNaissance|date('Y-m-d') }}</td>
+                <td><img src=" {{ asset ("img/acteurs/") }}{{ acteur.image }}" width="200px" height="300px"></td>
+                <td><a href="{{ path("troiswa_back_acteurs_editer", {'id' : acteur.id} ) }}">editer</a></td>
+            </tr>
+             {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

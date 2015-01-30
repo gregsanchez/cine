@@ -1,0 +1,59 @@
+troiswa_back_first_page:
+  path: /test
+  defaults: { _controller: TroiswaBackBundle:Default:test }
+
+
+troiswa_back_second_page:
+  path: /prenom
+  defaults: { _controller: TroiswaBackBundle:Default:prenom }
+
+
+troiswa_back_theme:
+  path: /theme
+  defaults: { _controller: TroiswaBackBundle:Default:theme }
+
+
+troiswa_back_homepage:
+  path: /
+  defaults: { _controller: TroiswaBackBundle:Main:index }
+
+
+
+troiswa_back_acteurs:
+  path: /acteurs
+  defaults: { _controller: TroiswaBackBundle:Acteur:index }
+
+
+troiswa_back_films:
+  path: /films
+  defaults: { _controller: TroiswaBackBundle:Films:index }
+
+
+troiswa_back_categories:
+  path: /categories
+  defaults: { _controller: TroiswaBackBundle:Categories:index }
+
+
+troiswa_back_one_acteur:
+  path: /acteur/{id}
+  defaults: { _controller: TroiswaBackBundle:Acteur:show }
+  requirements:
+    id: \d+
+
+
+troiswa_back_one_film:
+  path: /films/{id}
+  defaults: { _controller: TroiswaBackBundle:Films:show }
+
+
+troiswa_back_acteurs_ajouter:
+  path: /acteurs/ajouter
+  defaults: { _controller: TroiswaBackBundle:Acteur:add }
+
+
+troiswa_back_acteurs_editer:
+  path: /acteurs/editer/{id}
+  defaults: { _controller: TroiswaBackBundle:Acteur:editer }
+
+
+

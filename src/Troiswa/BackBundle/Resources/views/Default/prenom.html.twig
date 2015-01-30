@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>rebonjour</p>
+        <a href="{{ path("troiswa_back_first_page")}}">click
+        </a>
+    {% if myAge >= 35 %}
+        {{ firstPrenom|upper }} a {{ myAge }}
+    {% endif %}
+
+<h2>Les acteurs sont :</h2>
+
+    {% for key,value in allActeurs %}
+        {{ value.prenom }} {{ value.nom }}<br>
+    {% endfor %}
+
+
+    {{ dump(allActeurs) }}
+
+    </body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "TroiswaBackBundle::layout.html.twig" %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Tous les films:
+            </h1>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <td>id</td>
+                <td>titre</td>
+                <td>description</td>
+                <td>date_sortie</td>
+                <td>image</td>
+                <td>duree</td>
+                <td>note</td>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for film in allFilms %}
+                <tr>
+                    <td>{{ film.id }}</td>
+                    <td><a href="{{ path("troiswa_back_one_film", {'id' : film.id} ) }}">{{ film.titre }}</a></td>
+                    <td>{{ film.description }}</td>
+                    <td>{{ film.dateSortie|date("Y-m-d") }}</td>
+                    <td><img src="{{ asset ("img/films/") }}{{ film.image }}" width="200px" height="300px"></td>
+                    <td>{{ film.duree }}</td>
+                    <td>{{ film.note }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
